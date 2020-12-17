@@ -33,7 +33,7 @@ app.use(tutorSessionRouter);
 // Configure database
 console.log('***debug::app.js*** createConnection() begin')
 const db = sql.createConnection({
-  host: 'localhost2',
+  host: 'localhost',
   user: 'nodeclient',
   password: '123456',
   database: 'tutorapp',

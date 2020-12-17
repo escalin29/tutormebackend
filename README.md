@@ -1,4 +1,4 @@
-# Capstone-Project---TutorNow---Backend
+# CapstoneProject - TutorMe
 
 # Installation
 ```npm install```
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `student` (
    ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
   
   
- CREATE TABLE IF NOT EXISTS `tutorsessionrating` ( 
+ CREATE TABLE IF NOT EXISTS `tutorsessiontutorrating` ( 
   `tutorsessionid` int(5),
   `assignedtutorid` int(5),
   `studentid` int(5),
@@ -77,6 +77,16 @@ CREATE TABLE IF NOT EXISTS `student` (
   `tutorqualityservicecomment` varchar(5000),
   `tutorknowledge` int(2),
   `tutorknowledgecomment` varchar(5000),
+   FOREIGN KEY (`tutorsessionid`) REFERENCES tutorsession (`tutorsessionid`),
+   FOREIGN KEY (`assignedtutorid`) REFERENCES tutor (`tutorid`),
+   FOREIGN KEY (`studentid`) REFERENCES student (`studentid`)
+   ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1; 
+  
+  
+   CREATE TABLE IF NOT EXISTS `tutorsessionstudentrating` ( 
+  `tutorsessionid` int(5),
+  `assignedtutorid` int(5),
+  `studentid` int(5),
   `studentpoliteness` int(2),
   `studentpolitenesscomment` varchar(5000),
   `studentopenness` int(2),

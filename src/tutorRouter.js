@@ -100,7 +100,7 @@ tutorRouter.post("/api/tutor/login", async (req, res) => {
 
 // update tutor
 
-tutorRouter.post('/api/tutor/update', async (req, res) => {
+tutorRouter.patch('/api/tutor/update', async (req, res) => {
   let body = req.body;
 
   let sql = 'SELECT * FROM tutor WHERE tutorid = ?';
